@@ -1,0 +1,20 @@
+<div id="main"></div>
+<button onclick="show()">Add</button>
+<button onclick="remo()">Remove</button>
+<script>
+    let img1 = document.createElement("img");
+    img1.classList.add("img1");
+    img1.style.height = "200px";
+    img1.style.width = "200px";
+    img1.src = "anime.jpg";
+    main = document.getElementById('main');
+    let show = function () {
+        main.appendChild(img1);
+    }
+    let remo = function () {
+        main.removeChild(img1);
+    }
+  
+
+
+</script>
