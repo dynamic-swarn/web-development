@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Login / Signup</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins', sans-serif;
+    }
+
+    body{
+      height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      background: linear-gradient(135deg, #f5f5f5, #f5f5f5);
+    }
+
+    .container{
+      width:850px;
+      height:500px;
+      background:#fff;
+      border-radius:20px;
+      box-shadow:0 20px 40px rgba(0,0,0,0.3);
+      display:flex;
+      overflow:hidden;
+    }
+
+    /* Left Panel */
+    .left{
+      width:50%;
+      background:linear-gradient(135deg,#453ad9,#3434a0);
+      color:#fff;
+      padding:50px;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      transition:0.6s;
+    }
+
+    .left h1{
+      font-size:36px;
+      margin-bottom:20px;
+    }
+
+    .left p{
+      font-size:15px;
+      line-height:1.6;
+    }
+
+    /* Right Panel */
+    .right{
+      width:50%;
+      padding:50px;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      transition:0.6s;
+    }
+
+    h2{
+      text-align:center;
+      margin-bottom:20px;
+      color:#333;
+    }
+
+    input{
+      width:100%;
+      padding:12px;
+      margin:10px 0;
+      border-radius:8px;
+      border:1px solid #ccc;
+      outline:none;
+    }
+
+    button{
+      width:100%;
+      padding:12px;
+      margin-top:15px;
+      border:none;
+      border-radius:8px;
+      background:#667eea;
+      color:#fff;
+      font-size:16px;
+      cursor:pointer;
+      transition:0.3s;
+    }
+
+    button:hover{
+      background:#764ba2;
+    }
+
+    .toggle{
+      text-align:center;
+      margin-top:15px;
+      font-size:14px;
+      cursor:pointer;
+      color:#667eea;
+    }
+
+    /* Signup Hidden */
+    .signup{
+      display:none;
+    }
+
+    /* Responsive */
+    @media(max-width:900px){
+      .container{
+        width:95%;
+        height:auto;
+        flex-direction:column;
+      }
+      .left{
+        width:100%;
+        min-height:180px;
+        text-align:center;
+        padding:30px 20px;
+      }
+      .left h1{
+        font-size:28px;
+      }
+      .right{
+        width:100%;
+        padding:30px 20px;
+      }
+    }
+
+    @media(max-width:480px){
+      body{
+        padding:20px 0;
+      }
+      .container{
+        border-radius:15px;
+      }
+      input{
+        padding:10px;
+        font-size:14px;
+      }
+      button{
+        padding:10px;
+        font-size:14px;
+      }
+      h2{
+        font-size:20px;
+      }
+      .toggle{
+        font-size:13px;
+      }
+    }
+      .left,.right{
+        width:100%;
+      }
+    
+  </style>
+</head>
+<body>
+
+<div class="container">
+
+  <div class="left" id="leftPanel">
+    <h1>Welcome Back!</h1>
+    <p>Login to continue your journey with us.
+       We are happy to see you again 😊</p>
+  </div>
+
+  <div class="right">
+
+    <!-- Login Form -->
+    <div class="login" id="loginForm">
+      <h2>Login</h2>
+      <input type="email" placeholder="Email" />
+      <input type="password" placeholder="Password" />
+      <button>Login</button>
+      <div class="toggle" onclick="showSignup()">Don't have an account? Sign Up</div>
+    </div>
+
+    <!-- Signup Form -->
+    <div class="signup" id="signupForm">
+      <h2>Sign Up</h2>
+      <input type="text" placeholder="Full Name" />
+      <input type="email" placeholder="Email" />
+      <input type="password" placeholder="Password" />
+      <button>Create Account</button>
+      <div class="toggle" onclick="showLogin()">Already have an account? Login</div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  const loginForm = document.getElementById('loginForm');
+  const signupForm = document.getElementById('signupForm');
+  const leftPanel = document.getElementById('leftPanel');
+
+  function showSignup(){
+    loginForm.style.display = 'none';
+    signupForm.style.display = 'block';
+    leftPanel.style.background = '#453ad9';
+    leftPanel.innerHTML = '<h1>Hello, Friend!</h1><p>Sign up and start your amazing journey with us 🚀</p>';
+  }
+
+  function showLogin(){
+    signupForm.style.display = 'none';
+    loginForm.style.display = 'block';
+    leftPanel.style.background = 'linear-gradient(135deg,#43cea2,#185a9d)';
+    leftPanel.innerHTML = '<h1>Welcome Back!</h1><p>Login to continue your journey with us 😊</p>';
+  }
+</script>
+
+</body>
+</html>
