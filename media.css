@@ -1,0 +1,130 @@
+
+/* ==============================
+   RESPONSIVE
+============================== */
+@media (max-width: 768px) {
+  .footer {
+    text-align: center;
+  }
+
+  .social-icons {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 992px) {
+   .search-box {
+      width: 40%;
+   }
+
+   .search-box input {
+      width: 100%;
+   }
+
+   .search-box i {
+      right: 15px;
+   }
+
+   .nav-icons {
+      gap: 15px;
+      font-size: 16px;
+   }
+}
+@media (max-width: 768px) {
+
+   nav {
+      flex-wrap: wrap;
+      height: auto;
+      padding: 10px 15px;
+   }
+
+   .logo {
+      font-size: 20px;
+      padding-left: 0;
+        padding-left: 7px;
+   }
+
+   .search-box {
+      order: 3;
+      width: 100%;
+      margin-top: 8px;
+   }
+
+   .search-box input {
+      width: 100%;
+      padding: 8px 35px 8px 12px;
+   }
+
+   .search-box i {
+      right: 12px;
+   }
+
+   .nav-icons {
+      gap: 12px;
+      padding-right: 0;
+   }
+
+   .log {
+      display: none; /* hide Login text on mobile */
+   }
+}
+@media (max-width: 480px) {
+
+   .logo {
+      font-size: 18px;
+   }
+
+   .nav-icons {
+      gap: 10px;
+      font-size: 16px;
+   }
+
+   .count {
+      font-size: 9px;
+      height: 10px;
+      width: 10px;
+   }
+}
+
+@media (max-width: 768px) {
+  #upper-card {
+    gap: 15px;
+    padding: 10px;
+  }
+
+  .cards {
+    height: 65px;
+    width: 65px;
+  }
+
+  .category p {
+    font-size: 13px;
+  }
+}
+@media (max-width: 480px) {
+  #upper-card {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    justify-content: flex-start;
+    padding: 10px;
+    scrollbar-width: none; /* Firefox */
+  }
+
+  #upper-card::-webkit-scrollbar {
+    display: none; /* Chrome */
+  }
+
+  .cards {
+    height: 55px;
+    width: 55px;
+  }
+
+  .category {
+    flex: 0 0 auto;
+  }
+
+  .category p {
+    font-size: 12px;
+  }
+}
+
