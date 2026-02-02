@@ -1,0 +1,17 @@
+<!-- change the fruit in seconds -->
+<div id="msg"></div>
+<script>
+    let arr = ["Apple", "Banana", "Orange"];
+    let msg = document.getElementById("msg");
+    let i = -1;
+    function printFav() {
+        i++;
+        msg.innerHTML = "I Like " + arr[i];
+        if (i == arr.length - 1) {
+            i = -1;
+        }
+    }
+    printFav();
+    setInterval(printFav, 500);
+
+</script>
