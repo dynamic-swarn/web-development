@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digital Clock</title>
+  <style>
+    /* Dark background with subtle gradient */
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #0f0f0f;
+      font-family: 'Orbitron', sans-serif;
+    }
+
+    /* Clock container */
+    .hero {
+      background: rgba(0, 0, 0, 0.7);
+      padding: 50px 80px;
+      border-radius: 25px;
+      box-shadow: 0 0 40px rgba(0, 255, 255, 0.5);
+      text-align: center;
+    }
+
+    /* Clock digits */
+    .clock {
+      font-size: 70px;
+      color: #00ffff;
+      text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #00ffff;
+      letter-spacing: 8px;
+    }
+
+    /* Colon blinking animation */
+    .colon {
+      animation: blink 1s step-start infinite;
+    }
+
+    @keyframes blink {
+      50% { opacity: 0; }
+    }
+
+    /* Optional date display */
+    .date {
+      color: #fff;
+      font-size: 20px;
+      margin-top: 15px;
+      letter-spacing: 2px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="hero">
+    <div class="clock" id="clock">00:00:00</div>
+    <div class="date" id="date"></div>
+  </div>
+
+  <script>
+    function updateClock() {
+      const now = new Date();
+      let hours = String(now.getHours()).padStart(2, '0');
+      let minutes = String(now.getMinutes()).padStart(2, '0');
+      let seconds = String(now.getSeconds()).padStart(2, '0');
+      document.getElementById('clock').innerHTML = 
+        `${hours}<span class="colon">:</span>${minutes}<span class="colon">:</span>${seconds}`;
+
+      const options = { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric' };
+      document.getElementById('date').textContent = now.toLocaleDateString(undefined, options);
+    }
+
+    setInterval(updateClock, 1000);
+    updateClock();
+  </script>
+
+</body>
+</html>
