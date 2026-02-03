@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DigitalClock</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            background: linear-gradient(to right, blue, pink);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero {
+            background: black;
+            padding: 50px 80px;
+            border-radius: 25px;
+            box-shadow: 0 0 40px rgba(0, 255, 255, 0.5);
+            text-align: center;
+
+        }
+
+        .clock {
+            font-size: 70px;
+            color: rgb(92, 92, 187);
+            letter-spacing: 8px;
+        }
+
+        .clock span {
+            display: inline-block;
+            text-align: center;
+            position: relative;
+            width: 100px;
+        }
+        h1 {
+            color: white;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid white;
+        }
+        .col{
+            animation: blink 1s step-start infinite;
+        }
+        @keyframes blink {
+            50% { opacity: 0; }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="hero">
+        <h1>DigitalClock</h1>
+        <div class="clock">
+            <span id="hrs">00</span>
+            <span class="col">:</span>
+            <span id="min">00</span>
+            <span class="col">:</span>
+            <span id="sec">00</span>
+        </div>
+    </div>
+</body>
+<script>
+    let hrs = document.getElementById("hrs");
+    let min = document.getElementById("min");
+    let sec = document.getElementById("sec");
+
+
+    setInterval(print, 1000);
+    function print() {
+        let curTime = new Date();
+        hrs.innerHTML = (curTime.getHours() < 10 ? "0" : "") + curTime.getHours();
+        min.innerHTML = (curTime.getMinutes() < 10 ? "0" : "") + curTime.getMinutes();
+        sec.innerHTML = (curTime.getSeconds() < 10 ? "0" : "") + curTime.getSeconds();
+    }
+</script>
+
+</html>
