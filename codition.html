@@ -1,0 +1,19 @@
+<div id="one"></div>
+<style>
+    #one{
+        height: 300px;
+        width: 300px;
+        background-color: lightblue;
+    }
+</style>
+<script>
+    let time = prompt("Enter the time");
+    one = document.getElementById('one');
+    if(time <=2){
+        one.style.backgroundColor = "red";
+    }else if (time == 3){
+         one.style.backgroundColor = "yellow";
+    }else if(time >=4){
+         one.style.backgroundColor = "green";
+    }
+</script>
