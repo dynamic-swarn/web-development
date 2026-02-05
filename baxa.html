@@ -1,0 +1,32 @@
+<div class="box"><img src="img/santa.gif"  ></div>
+<style type="text/css">
+    .box{
+        width: 200px;
+        height: 200px;
+        background-color: aqua;
+        animation: animate-aqua-box 2s infinite;
+      
+
+    }
+    @keyframes animate-aqua-box{
+       0%{
+        transform: translate3d(0px, 0px,0px);
+       }
+       25%{
+        transform: translate3d(500px, 0px,0px);
+        background-color: black;
+        border-radius: 50%;
+       }
+       50%{
+        transform: translate3d(500px, 500px,0px);
+        background-color: pink;
+    
+
+       }
+       75%{
+        transform: translate3d(0px, 500px, 500px);
+        background-color: blue;
+       
+       }
+    }
+</style>

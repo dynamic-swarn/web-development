@@ -1,0 +1,58 @@
+<div class="container">
+    <div class="red">RED</div>
+    <div class="green">GREEN</div>
+    <div class="blue">BLUE</div>
+</div>
+<style>
+    .container{
+        background-color: white;
+       height:250px ;
+       width:200px ;
+      border-radius: 50%;
+    }
+    .red{
+       background-color: red;
+       height:200px ;
+       width:200px ;
+       border-radius: 50%;
+       text-align: center;
+       font-size: 43px;
+       color: aliceblue;
+       animation: nali 2s infinite;
+    }
+    .green{
+        background-color: green;
+        height:200px ;
+       width:200px ;
+       margin-top:50px ;
+       margin-left: 250px;
+       text-align: center;
+       font-size: 43px;
+       color: aliceblue;
+       border-radius: 50%;
+       animation: nali 2s infinite;
+    }
+    .blue{
+        background-color: blue;
+        height:200px ;
+       width:200px ;
+       margin-top:50px ;
+       margin-left: 500px;
+       text-align: center;
+       font-size: 43px;
+       color: aliceblue;
+       border-radius: 50%;
+       animation: nali 2s infinite;
+    }
+    @keyframes nali{
+        0%{
+            transform: translate3d(0px,0px,0px);
+        }
+        50%{
+            transform: translate3d(0px,500px,0px);
+        }
+        100%{
+            transform: translate3d(0px,0px,0px);
+        }
+    }
+</style>
