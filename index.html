@@ -1,15 +1,59 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <title>Happy Birthday!</title>
-  <link rel="stylesheet" href="./style.css">
-<script src="https://public.codepenassets.com/js/prefixfree-1.0.7.min.js"></script>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 </head>
-<body>
-<canvas id=c></canvas>
-  <script  src="./script.js"></script>
 
+<body>
+    <div class="container">
+        <div class="card"><img
+                src="https://img.freepik.com/free-photo/anime-girl-cherry-blossoms-full-moon_23-2152016699.jpg?w=360"
+                alt="">
+            <p class="para">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        </div>
+        <div class="card"><img
+                src="https://images.stockcake.com/public/3/b/6/3b69aea5-3e27-4867-8d74-3446f8bc568b_large/gentle-anime-smile-stockcake.jpg"
+                alt="">
+            <p class="para">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        </div>
+        <div class="card"><img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR70TkrP9GKuSc-HNZA_ztbCz4yTW2X7tgKi45LKCJ_wTtEW6xh2s8rp0OEQgWFG36VXv0&usqp=CAU"
+                alt="">
+            <p class="para">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        </div>
+    </div>
 </body>
+
 </html>
+<style>
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 24px;
+        padding-top: 50px;
+        ;
+    }
+
+    .card {
+        border-radius: 10%;
+        height: 300px;
+        width: 200px;
+        border: 2px solid black;
+    }
+
+    img {
+        height: 200px;
+        width: 200px;
+        object-fit: cover;
+        border-radius: 50%;
+    }
+    .para{
+        padding-left: 10px;
+        justify-content: center;
+        align-items: center;
+    }
+</style>
