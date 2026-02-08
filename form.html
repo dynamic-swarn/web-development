@@ -1,14 +1,19 @@
-<!DOCTYPE html>
-<head>
-    <body>
-        <form>
-            <fieldset>
-                <legend>Star Maker LIT</legend>
-                Name:
-                <input type="text"><br><br>
-                Password:
-                <input type="password"><br>
-            </fieldset>
-        </form>
-    </body>
-</head>
+<form>
+    <input type="text" id="fname" placeholder="Enter Your Name"><br>
+    <input type="text" id="lname" placeholder="Enter Your Last Name"><br>
+    <input type="email" id="email" placeholder="Enter Your Mail"><br>
+    <input type="date" id="bdate" placeholder="Enter Your Birth Date">
+</form>
+<button onclick="fetchUserDetails()">Submit</button>
+<script>
+    let fname = document.getElementById('fname');
+    let lname = document.getElementById('lname');
+    let email = document.getElementById('email');
+    let date = document.getElementById('bdate');
+    function fetchUserDetails() {
+        console.log(fname.value);
+        console.log(lname.value);
+        console.log(email.value);
+        console.log(bdate.value);
+    }
+</script>
