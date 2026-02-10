@@ -1,0 +1,37 @@
+<div id="card-container">
+
+</div>
+<style>
+    .card{
+       font-size: 40px;
+       display: flex;
+        background: pink;
+        margin: 20px;
+        align-items: center;
+        font: 2rem sans-serif;
+    }
+</style>
+<script>
+    var cardContainer = document.getElementById('card-container');
+    let counter = ["🍇","🍉","🍊","🍌","🥝","🍒",];
+    let names = ["Grapes","Watermellon","Orange","Banana","Avocado","Cherry"];
+
+    for(item in counter)
+    {
+            var card = document.createElement('div');
+            card.classList.add('card');
+
+            var cardHeading = document.createElement('h1');
+            cardHeading.classList.add('card-heading');
+            cardHeading.innerHTML = counter[item];
+
+            var itemName = document.createElement('strong');
+            itemName.classList.add('item-name');
+            itemName.innerHTML = names[item];
+
+            card.appendChild(cardHeading);
+            card.appendChild(itemName)
+            cardContainer.appendChild(card);
+    }
+
+</script>
