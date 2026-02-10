@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container-row" id="con">
+        <div id="box1">1</div>
+        <div id="box2">2</div>
+        <div id="box3">3</div>
+        <div id="box4">4</div>
+    </div>
+    <button onclick="change()">Change Colour</button>
+</body>
+<script>
+let container = document.getElementById('con');
+let change = function(){
+    if(con.className === 'container-row') {
+      container.className = "container-coloumn"
+    }else{
+          container.className = "container-row"
+    }
+}
+</script>
+</html>
+<style>
+    .container-row {
+        display: flex;
+        gap: 15px;
+        justify-content: center;
+    }
+     .container-column {
+        display: flex;
+        gap: 15px;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    #box1,
+    #box2,
+    #box3,
+    #box4 {
+        height: 100px;
+        width: 100px;
+        text-align: center;
+        line-height: 100px;
+        color: white;
+        font-size: 45px;
+        font-weight: bold;
+        margin-top: 20px;
+        margin-left: 20px;
+    }
+
+    #box1 {
+        background-color: Red;
+    }
+
+    #box2 {
+        background-color: green;
+    }
+
+    #box3 {
+        background-color: blueviolet;
+    }
+
+    #box4 {
+        background-color: pink;
+    }
+
+    button {
+        height: 2rem;
+        margin-top: 25px;
+        border-radius: 10px;
+        border: none;
+        background-color: black;
+        color: aliceblue;
+        font-size: 15px;
+        font-weight: bold;
+        cursor: pointer;
+        margin-left: 190px;
+    }
+
+    button:hover {
+        background-color: aliceblue;
+        color: black;
+    }
+    @media screen and (max-width : 700px) {
+        .container{
+            flex-direction: column;
+        }
+        
+    }
+</style>
