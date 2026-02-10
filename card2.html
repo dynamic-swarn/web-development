@@ -1,0 +1,100 @@
+<div id="main"></div>
+<style>
+   .card {
+       display: flex;
+       align-items: center;
+       justify-content: space-evenly;
+       margin: 10px;
+       background-color: #F1F1F1;
+   }
+   .p-image {
+       width: auto;
+       height: 100px;
+   }
+   .product-info {
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+   }
+   .cart-button{
+    margin: 10px;
+    border-radius: 20px;
+    background-color: #4CAF50;
+    border: none;
+    font-size: 1rem;
+    padding: 2px 10px;
+    cursor: pointer;
+   }
+   .cart-button:hover {
+       background-color: #ecf3ed;
+   }
+</style>
+<script>
+
+    let addStar = function(stars){
+        star  = '';
+        while(stars > 0){
+            star += '⭐';
+            stars--;
+        }
+        return star;
+    }
+    let product = [
+        {
+            id : 1,
+            product_name : "Mango",
+            price : 250,
+            rating : 4,
+            url : "mango.png"
+        },
+        {
+            id : 2,
+            product_name : "Orange",
+            price : 300,
+            rating : 3,
+            url : "orange.png"
+        }
+    ];
+    let main = document.getElementById('main');
+    for(p of product){
+        // document.write(p.id + "  " + p.product_name + "  " + p.price + "  " + p.rating + "<br>");
+        var card = document.createElement('div');
+        card.classList.add('card');
+
+        var imgContainer = document.createElement('div');
+        imgContainer.classList.add('img-container');
+
+        var productImage = document.createElement('img');
+        productImage.classList.add('p-image')
+        productImage.src = "Assets/img/" + p.url;
+
+        imgContainer.appendChild(productImage);
+
+        var productInfo = document.createElement('div');
+        productInfo.classList.add('product-info');
+
+        var productName = document.createElement('h1');
+        productName.innerHTML = p.product_name;
+
+        var price = document.createElement('strong');
+        price.innerHTML = '$' + p.price;
+
+        var rating = document.createElement('span');
+        rating.innerHTML = addStar(p.rating);
+        rating.classList.add('rating');
+
+        var cartButton = document.createElement('button');
+        cartButton.innerHTML = 'Add to Cart';
+        cartButton.classList.add('cart-button');
+        cartButton.id = p.id;
+
+        productInfo.appendChild(productName);
+         productInfo.appendChild(rating);
+        productInfo.appendChild(price);
+        productInfo.appendChild(cartButton);
+
+        card.appendChild(imgContainer);
+        card.appendChild(productInfo);
+        main.appendChild(card);
+    }
+</script>
