@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Gilroy';
+            color: #fff;
+        }
+
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+        }
+
+        #main {
+            height: 100%;
+            width: 100%;
+            background-color: black;
+            position: relative;
+        }
+
+        .elem {
+            height: 120px;
+            width: 100%;
+            border-bottom: 2px solid #fff;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            position: relative;
+        }
+
+        .elem h1 {
+            font-size: 6vw;
+            position: relative;
+            z-index: 6;
+            mix-blend-mode: difference;
+        }
+
+        .elem img {
+            height: 110px;
+            width: 110px;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 50%;
+            position: absolute;
+            /* transform: translate(-50%, -50%); */
+            transition: opacity 0.3s ease, transform 0.1s linear;
+
+            opacity: 0;
+            transition: all linear 0.3s;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="main">
+        <div id="elem1" class="elem">
+            <h1>Manas</h1>
+            <img src="https://thumbs.dreamstime.com/b/portrait-handsome-mature-man-home-attractive-year-old-52197333.jpg"
+                alt="">
+        </div>
+        <div class="elem">
+            <h1>Jyoti</h1>
+            <img src="https://www.shutterstock.com/image-photo/beautiful-50yearold-woman-background-sunset-600w-1343632373.jpg"
+                alt="">
+        </div>
+        <div class="elem">
+            <h1>Swarna</h1>
+            <img src="https://t3.ftcdn.net/jpg/04/10/25/02/360_F_410250270_efHWIGeq5j9efJhoQ90pgRSM4C0JH6im.jpg" alt="">
+        </div>
+        <div class="elem">
+            <h1>Mona</h1>
+            <img src="https://t3.ftcdn.net/jpg/12/68/41/96/360_F_1268419662_gFWzmS9JEjtpcKkq0TRvHkYg7Qn4Dqud.jpg"
+                alt="">
+        </div>
+        <div class="elem">
+            <h1>Jagan</h1>
+            <img src="https://thumbs.dreamstime.com/b/fashionable-child-leather-coat-stylish-little-boy-autumn-fashion-funny-years-old-kid-58980908.jpg"
+                alt="">
+        </div>
+    </div>
+</body>
+<script>
+    var elem = document.querySelectorAll(".elem");
+    elem.forEach(function(val) {
+
+        // console.log(val.childNodes[3])
+        val.addEventListener("mouseenter", function () {
+            val.childNodes[3].style.opacity=1;
+        })
+         val.addEventListener("mouseleave", function () {
+            val.childNodes[3].style.opacity=0;
+        })
+        val.addEventListener("mousemove", function (dets) {
+            val.childNodes[3].style.left=dets.x+"px"
+            // val.childNodes[3].style.top=dets.y+"px"
+        })
+    })
+</script>
+
+</html>
