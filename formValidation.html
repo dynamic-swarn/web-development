@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Form Validation UI</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        height: 100vh;
+        font-family: Arial, sans-serif;
+        background: linear-gradient(to right, #667eea, #764ba2);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .container {
+        width: 360px;
+      }
+
+      .form {
+        background: #fff;
+        padding: 25px;
+        border-radius: 10px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      }
+
+      .form h2 {
+        text-align: center;
+        margin-bottom: 20px;
+        color: #333;
+      }
+
+      .form-control {
+        margin-bottom: 15px;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 5px;
+        color: #555;
+        font-weight: bold;
+      }
+
+      input {
+        width: 100%;
+        padding: 10px;
+        border: 2px solid #ccc;
+        border-radius: 6px;
+        font-size: 14px;
+        outline: none;
+      }
+
+      /* JS will toggle these */
+      .form-control.success input {
+        border-color: #2ecc71;
+      }
+
+      .form-control.error input {
+        border-color: #e74c3c;
+      }
+
+      .error {
+        color: #e74c3c;
+        font-size: 12px;
+        margin-top: 4px;
+        display: none;
+      }
+
+      button {
+        width: 100%;
+        padding: 12px;
+        background: #667eea;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background: #5a67d8;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <form autocomplete="off" class="form" id="form">
+        <h2>Register</h2>
+
+        <!-- Name -->
+        <div class="form-control">
+          <label>Name</label>
+          <input
+            type="text"
+            id="name"
+            placeholder="Enter your name"
+            autocomplete="new-name"
+            
+          />
+          <small class="error" id="nameError"></small>
+        </div>
+
+        <!-- Email -->
+        <div class="form-control">
+          <label>Email</label>
+          <input
+            type="text"
+            id="email"
+            placeholder="Enter your email"
+            autocomplete="new-email"
+          />
+          <small class="error" id="emailError"></small>
+        </div>
+
+        <!-- Password -->
+        <div class="form-control">
+          <label>Password</label>
+          <input
+            type="password"
+            id="password"
+            placeholder="Enter your password"
+            autocomplete="off"
+          />
+          <small class="error" id="passwordError"></small>
+        </div>
+
+        <button type="submit" id="submitBtn">Submit</button>
+      </form>
+    </div>
+    <script>
+      let name = document.querySelector("#name");
+      let email = document.querySelector("#email");
+      let password = document.querySelector("#password");
+      let form = document.querySelector("#form");
+
+
+      form.addEventListener("submit", function (dets) {
+        dets.preventDefault();
+        document.querySelector("#nameError").textContent="";
+        document.querySelector("#emailError").textContent="";
+        document.querySelector("#passwordError").textContent="";
+
+        const nameRegex = /^[A-Za-z\s]{11,}$/;
+         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+        const passwordRegex =/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+          
+        let nameAns = nameRegex.test(name.value)
+        let emailAns = emailRegex.test(email.value)
+        let passAns = passwordRegex.test(password.value)
+
+        if(!nameAns){
+          document.querySelector("#nameError").textContent = "Incorrrect";
+          document.querySelector("#nameError").style.display = "initial";
+        }
+         if(!emailAns){
+          document.querySelector("#emailError").textContent = "Incorrrect Email Address"
+            document.querySelector("#emailError").style.display = "initial";
+        }
+         if(!passAns){
+          document.querySelector("#passwordError").textContent = "Incorrrect Password Error"
+            document.querySelector("#passwordError").style.display = "initial";
+        }
+        showPopup("Login Successful!");
+      });
+      function showPopup(message) {
+  let popup = document.createElement("div");
+
+  popup.style.position = "fixed";
+  popup.style.top = "50%";
+  popup.style.left = "50%";
+  popup.style.transform = "translate(-50%, -50%)";
+  popup.style.background = "#fff";
+  popup.style.padding = "20px";
+  popup.style.boxShadow = "0 0 10px rgba(0,0,0,0.3)";
+  popup.style.zIndex = "1000";
+
+  popup.innerHTML = `
+    <p>${message}</p>
+    <button>OK</button>
+  `;
+
+  popup.querySelector("button").onclick = () => popup.remove();
+
+  document.body.appendChild(popup);
+}
+
+// call it
+
+
+    </script>
+  </body>
+</html>
