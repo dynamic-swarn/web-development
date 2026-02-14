@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.7.0/fonts/remixicon.css" rel="stylesheet" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Gilroy';
+        }
+
+        html,
+        body {
+            height: 100%;
+        }
+        body{
+            background-color: indianred;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #container{
+            height: 400px;
+            width: 350px;
+            background-color: white;
+            border-radius: 10px;
+            position: relative;
+            overflow: hidden;
+        }
+        #container img{
+            height: 400px;
+            width: 350px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        #container i{
+            color: rgb(255, 0, 0);
+            font-size: 70px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%) scale(0);
+            opacity: 0.8;
+            transition: transform ease 0.4s;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="container">
+        <img src="https://m.media-amazon.com/images/I/51Q33uZVByL._AC_UF894,1000_QL80_.jpg" alt="">
+        <i class="ri-heart-fill"></i>
+    </div>
+
+</body>
+<script>
+    var con = document.querySelector("#container");
+    var love = document.querySelector("i");
+
+    con.addEventListener("dblclick",function(){
+        love.style.transform = 'translate(-50%,-50%) scale(1)';
+        love.style.opacity=0.8;
+         setTimeout(function(){
+          love.style.opacity=0;   
+        },1000);
+        setTimeout(function(){
+          love.style.transform = 'translate(-50%,-50%) scale(0)';   
+        },2000);
+    });
+</script>
+
+</html>
