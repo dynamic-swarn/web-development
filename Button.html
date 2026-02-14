@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Gilroy';
+        }
+
+        html,
+        body {
+            height: 100%;
+        }
+
+        #card {
+            height: 400px;
+            width: 300px;
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(6, 97, 244, 0.395);
+        }
+
+        #card img {
+            height: 50%;
+            width: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        #card h1 {
+            font-size: 30px;
+            margin: 10px;
+        }
+
+        #card h5 {
+            font-size: 25px;
+            color: red;
+            margin-bottom: 20px;
+        }
+
+        #card button {
+            background-color: cadetblue;
+            color: black;
+            font-weight: 700;
+            padding: 12px 20px;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* #card #remove {
+            background-color: #dadada;
+            color: black;
+        } */
+    </style>
+</head>
+
+<body>
+    <div id="card"><img src="https://m.media-amazon.com/images/I/51Q33uZVByL._AC_UF894,1000_QL80_.jpg" alt="">
+        <h1>Angel Sona</h1>
+        <h5>Stranger</h5>
+        <div id="btn-container">
+            <!-- <button id="remove">Remove Friend</button> -->
+            <button id="add">Add Friend</button>
+        </div>
+    </div>
+
+</body>
+<script>
+    var isStatus = document.querySelector("h5");
+    var add = document.querySelector("#add")
+    // var remove = document.querySelector("#remove");
+    var check = 0;
+    add.addEventListener("click", function () {
+        if (check == 0) {
+            isStatus.innerHTML = "Friends";
+            isStatus.style.color = "green";
+            add.innerHTML = "Remove Friend";
+            add.style.backgroundColor = "#dadada";
+            add.style.color = "black";
+            check = 1;
+        } else {
+            isStatus.innerHTML = "Stranger";
+            isStatus.style.color = "red";
+            add.innerHTML = "Add Friend"
+            add.style.backgroundColor = "cadetblue";
+
+            add.style.color = "white";
+            check = 0;
+        }
+    })
+
+    //    remove.addEventListener("click",function(){
+    //         isStatus.innerHTML = "Stranger";
+    //         isStatus.style.color = "red"
+    //     })
+</script>
+
+</html>
