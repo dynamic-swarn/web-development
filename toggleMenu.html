@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eye-Catching Toggle Menu</title>
+  
+   
+</head>
+<body>
+
+  <nav>
+    <div class="logo">MyWebsite</div>
+    <div class="menu-toggle" id="toggleBtn">
+      <div class="bar1"></div>
+      <div class="bar2"></div>
+      <div class="bar3"></div>
+    </div>
+    <ul id="menu">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Portfolio</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="content">
+    <h1>Eye-Catching Toggle Menu ✨</h1>
+    <p>Resize the window and click the menu button to see the animation.</p>
+  </div>
+
+  <script>
+    const toggleBtn = document.getElementById("toggleBtn");
+    const menu = document.getElementById("menu");
+
+    toggleBtn.addEventListener("click", () => {
+      menu.classList.toggle("show");
+      toggleBtn.classList.toggle("active");
+    });
+  </script>
+
+</body>
+</html>
+<style>
+     * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80') no-repeat center center/cover;
+    }
+
+    /* Navbar */
+    nav {
+      background: linear-gradient(90deg, #ff512f, #dd2476);
+      color: #fff;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+    }
+
+    nav .logo {
+      font-size: 24px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+      transition: all 0.4s ease;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+      font-size: 18px;
+      padding: 8px 14px;
+      border-radius: 6px;
+      transition: 0.3s;
+    }
+
+    nav ul li a:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    /* Hamburger button */
+    .menu-toggle {
+      display: none;
+      cursor: pointer;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .menu-toggle div {
+      width: 28px;
+      height: 3px;
+      background: white;
+      border-radius: 5px;
+      transition: 0.4s;
+    }
+
+    /* Animate hamburger to cross */
+    .menu-toggle.active .bar1 {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+    .menu-toggle.active .bar2 {
+      opacity: 0;
+    }
+    .menu-toggle.active .bar3 {
+      transform: rotate(-45deg) translate(6px, -6px);
+    }
+
+    /* Responsive styles */
+    @media (max-width: 768px) {
+      nav ul {
+        display: none;
+        flex-direction: column;
+        background: #222;
+        width: 100%;
+        position: absolute;
+        top: 65px;
+        left: 0;
+        padding: 15px 0;
+        border-top: 2px solid #ff4b2b;
+      }
+
+      nav ul.show {
+        display: flex;
+        animation: slideDown 0.4s ease;
+      }
+
+      @keyframes slideDown {
+        from {
+          opacity: 0;
+          transform: translateY(-20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .menu-toggle {
+        display: flex;
+      }
+    }
+
+    /* Demo content */
+    .content {
+      padding: 50px 20px;
+      text-align: center;
+    }
+
+    .content h1 {
+      font-size: 36px;
+      color: #333;
+    }
+
+    .content p {
+      font-size: 18px;
+      color: #555;
+      margin-top: 10px;
+    }
+  </style>
