@@ -1,0 +1,18 @@
+<style>
+    table, td{
+        border: 1px solid black;
+        padding: 10px 20px;
+        border-collapse: collapse;
+    }
+</style>
+
+<script>
+    let a = 20;
+    let table= `<table>`;
+    for (i=1;i<=10;i++){
+        table+= `<tr> 
+            <td>20 * ${i} = </td><td>${20*i}</td></tr>`; 
+    }
+    table += `</table>`;
+document.write(table);
+</script>
