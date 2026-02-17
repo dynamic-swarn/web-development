@@ -1,0 +1,52 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+.nav-bar{
+	height: 80px;
+	background-color: #f1f1f1;
+}
+.siteLogo{
+	width: 50%;
+	float: left;
+}
+.siteLogo img{
+	width: 70px;
+	padding: 10px;
+	height: auto;
+}
+.nav-link{
+	float: right;
+	height: 100px;
+	width: 15%;
+	margin-top: 20px;
+}
+.nav-link a{
+	background-color: pink;
+	width: 100px;
+	padding: 20px;
+	text-decoration: none;
+}
+.bg{
+	height: 650px;
+	background-image: url("img/bg.jpg");
+	background-size: cover;
+}
+.left{
+	width: 50%;
+	float: left;
+	height: 650px;
+	background-image: url("img/christmas-tree-2523.gif");
+	background-repeat: no-repeat;
+	background-size: 500px 500px;
+	background-position: center;
+}
+.right{
+	width: 30%;
+	float: right;
+	height: 650px;
+	background-image: url("img/santa.gif");
+	background-repeat: no-repeat;
+	background-size: 500px 500px;
+	background-position: left;
+}
