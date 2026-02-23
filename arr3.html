@@ -1,0 +1,49 @@
+<style>
+    .cont {
+        display: flex;
+        gap: 10px;
+        width: 50%;
+    }
+
+    .box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 20px;
+        width: 70px;
+        height: 70px;
+        width: 300px;
+        border: 1px solid black;
+    }
+</style>
+<script>
+    let student = [
+        {
+            id: 1,
+            name: "Aju",
+            age: "19",
+            branch: "ITM",
+        },
+        {
+            id: 2,
+            name: "Raju",
+            age: "20",
+            branch: "BCA"
+        }
+    ];
+    // document.write("<div class='box'>",student[0].id, " ", student[0].name, " ", student[0].age, " ", student[0].branch,"<br>");
+    // document.write(student[1].id, " ", student[1].name, " ", student[1].age, " ", student[1].branch,"</div>");
+    document.write("<div class='cont'>");
+    document.write("<div class='box'>", student[0].id, "</div>");
+    document.write("<div class='box'>", student[0].name + "</div>");
+    document.write("<div class='box'>", student[0].age + "</div>");
+    document.write("<div class='box'>", student[0].branch + "</div>");
+    document.write("</div>");
+    document.write("<div class='cont'>");
+    document.write("<div class='box'>", student[1].id + "</div>");
+    document.write("<div class='box'>", student[1].name + "</div>");
+    document.write("<div class='box'>", student[1].age + "</div>");
+    document.write("<div class='box'>", student[1].branch + "</div>");
+    document.write("</div>");
+
+</script>
